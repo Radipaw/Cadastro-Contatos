@@ -1,0 +1,13 @@
+﻿@model ContatosModel
+@{
+    ViewData["Title"] = "Deletar Contato";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Aviso!</h1>
+    <p>Você tem certeza que gostaria de deletar o contato (@Model.Nome)?</p>
+    <div class="btn-group-lg" role="group" aria-label="Basic example">
+        <a type="button" class="btn btn-danger" asp-controller="Contatos" asp-action="Deletar" asp-route-id="@Model.Id">Sim</a>
+        <a type="button" class="btn btn-secondary" asp-controller="Contatos" asp-action="Index" >Cancelar</a>
+</div>
+</div>  

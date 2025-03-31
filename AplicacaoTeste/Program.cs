@@ -1,4 +1,5 @@
 using AplicacaoTeste.Data;
+using AplicacaoTeste.Repositorios;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,7 @@ builder.Services.AddDbContext<BancoContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase")));
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IContatoRepositorio, ContatoRepositorio>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
